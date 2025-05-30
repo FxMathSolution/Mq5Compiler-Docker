@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  mq5-compiler:
+    build: .
+    container_name: mq5-compiler-service
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./compiled:/app/compiled
+      - ./logs:/app/logs
+    environment:
+      - NODE_ENV=production
+      - MT5_PATH=/opt/metatrader5
+      - PORT=3000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - mq5-network
+
+networks:
+  mq5-network:
+    driver: bridge

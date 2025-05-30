@@ -1,0 +1,13 @@
+{
+  "name": "mq5-client-examples",
+  "version": "1.0.0",
+  "description": "Client examples for MQ5 Compiler Service",
+  "main": "client.js",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "form-data": "^4.0.0"
+  },
+  "scripts": {
+    "test": "node client.js health"
+  }
+}
