@@ -2,7 +2,7 @@
 
 # MQ5 Compiler Service - Bash Client Example
 
-BASE_URL="http://localhost:3000"
+BASE_URL="http://65.109.187.159:3000"
 
 # Function to show usage
 show_usage() {
